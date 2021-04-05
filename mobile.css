@@ -1,0 +1,574 @@
+/*IBM Plex Mono font*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
+/*IBM Plex Sans font*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap');
+
+:root{ 
+    --mobile-width: 32rem; 
+    --full-width: 100%;
+    --desktop-width: 100rem;
+    --font-plex-mono:'IBM Plex Mono', monospace, sans-serif;
+    --font-plex-sans:'IBM Plex Sans', monospace, sans-serif;
+    --font-size-header: 6.4rem;
+    --letter-spacing:0.1rem;
+    --line-height: 4.2rem; 
+}
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {   
+    font-size: 62.5%;  /*1rem = 10px*/
+}
+
+.container{
+    width: 100%;
+}
+
+/*---------Mobile view-------------*/
+
+/*nav bar*/
+
+.nav{
+    height: 4.4rem;
+    width: var(--mobile-width);
+    min-width: var(--full-width);
+    /*border: 1px solid #000;*/
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background: #fff;
+}
+.profile-pic img {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 1.6rem;
+    /*border: 1px solid #000;*/
+}
+
+/*Hamburguer-menu*/
+/*lines*/
+.line{
+    height: 20%;
+    width: 70%;
+    background-color: #000;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.line-top{
+    top: 25%;
+}
+.line-low {
+    transform: translate(-50%, -50%);
+    top: 75%;
+}
+.show-menu {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1.6rem;
+    cursor: pointer;
+    position: relative;
+}
+.custom-checkbox:checked + .label-hamburger .show-menu .line-med {
+    opacity: 0;
+}
+.custom-checkbox:checked + .label-hamburger .show-menu .line-top {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #000;
+}
+.custom-checkbox:checked + .label-hamburger .show-menu .line-low {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(135deg);
+    background-color: #000;
+}
+/*Menu */
+#show {
+    display: none;
+}
+#show:checked ~ .styled-menu{
+    transform: translate(0);
+    transform: translate(-85.6%);
+}
+
+.styled-menu {
+    height: 21.6rem;
+    width: 100%;
+    background-color:#0000EC;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    transform: translate(100%);
+    color: #ffffff;
+    position: fixed;
+}
+
+.styled-menu ul li {
+    list-style: none;
+    padding: 1.6rem 0 2.0rem 1.6rem;
+    font-size: 1.6rem;
+    font-family: var(--font-plex-mono);
+    cursor: pointer;
+    color: #fff
+}
+
+.styled-menu a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.styled-menu a:hover {
+    background-color: #3641e4;
+    color: #00F3BB;
+    text-decoration: line-through;
+}
+
+
+/*Header*/
+.header{
+    height: 34.8rem;
+    width: var(--mobile-width);
+    min-width: var(--full-width);
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid #000;*/
+}
+.header > div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7.0rem;
+    font-size: 3.6rem;
+}
+.header h1{
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1.0rem;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    height: 3.7rem;
+    color: #060A24;
+}
+
+#world-word{
+    text-decoration: line-through;
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1.6rem;
+    line-height:var(--line-height);
+    letter-spacing:var(--letter-spacing) ;
+    height: 3.7rem;
+    color: #060A24;
+}
+
+.header span{
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    margin-left: 1.6rem;
+    margin-bottom: 1.6rem;
+    line-height:var(--line-height);
+    letter-spacing:var(--letter-spacing);
+    height: 3.7rem;
+    color: #060A24;
+}
+#blue-dot{
+    color: #0000ec;
+}
+.header p{
+    font-size: 1.4rem;
+    color: #060A24;
+    line-height: 2.2rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    margin-top: 1.6rem;
+    font-family: var(--font-plex-mono);
+}
+.header button{
+    margin-top: 3.6rem;
+    margin-left: 1.6rem;
+    width: 28.8rem;
+    height: 4.8rem;
+    background: #00F3BB;
+    cursor: pointer;
+    font-family: var(--font-plex-mono);
+    font-size: 1.8rem;
+    color: #060A24;
+    text-align: center;
+    font-weight: 800;
+    line-height: var(--line-height);
+    border-style: none;
+    outline: none;
+    transition: .5s ease;
+}
+.header button:hover{
+    color: #fff;
+    background: linear-gradient(to right,#00F0B8, #0000FE);
+}
+
+/*Podcast Episodies*/
+
+.episodies {
+    height: 124.0rem;
+    background: linear-gradient(to bottom,#0000FF, #0000A3);
+    clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.4rem;
+}
+.episodies h2{
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    color: #fff;
+    letter-spacing:var(--letter-spacing) ;
+    line-height: var(--line-height);
+    margin-top: 6.4rem;
+    margin-left: 1.6rem;
+    padding-bottom: 2.1rem;
+    /*height: 1rem;
+    /*border: 1px solid #000;*/
+    
+}
+.episodies-iframes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.1rem;
+}
+.episodies div iframe{
+    height: 23.2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+}
+
+/*Description*/ /*Cellphone*/
+
+.description{
+    height: 75.9rem;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid #000;*/
+}
+.description h2{
+    font-family: var( --font-plex-sans);
+    font-size: 3.6rem;
+    color: #060A24;
+    letter-spacing:var(--letter-spacing);
+    line-height: var(--line-height);
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    
+}
+#venimos{
+    margin-bottom: 0.8rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    letter-spacing:var(--letter-spacing);
+    line-height: var(--line-height);
+}
+.description p{
+    font-family: var(--font-plex-mono);
+    font-size: 1.4rem;
+    color: #060A24;
+    line-height: 2.2rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+}
+.cellphone{
+    height: 42.7rem;
+    /*border: 1px solid #000;*/
+}
+.cellphone img{
+    position: relative;
+    height: 51.9rem;
+    bottom: 9.8rem;
+}
+.cellphone img:hover{
+    transform:scale(0.9);
+    transition: .3s linear;
+}
+
+/*Guests*/
+
+.guests{
+    height: auto;
+    margin-top: 5.4rem;
+    font-size: 0;
+}
+.guests h3{
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    color: #060A24;
+    letter-spacing:var(--letter-spacing);
+    line-height: var(--line-height);
+    margin-bottom: 1.4rem;
+    margin-left: 1.6rem;
+}
+.guest-pictures{
+    display: flex;
+    flex-direction: column;
+}
+.guests img{
+    height: auto;
+    width: 100%;  
+}
+.guests img:hover{
+/*Tomado de: https://cssgenerator.org/filter-css-generator.html*/
+    -webkit-filter:
+    grayscale( 0) 
+    blur( 0px) 
+    sepia( 34%) 
+    brightness( 0.74) 
+    contrast( 1.1) 
+    hue-rotate( 0deg) 
+    invert( 0%) 
+    saturate( 1.5) 
+    opacity( 1) 
+    drop-shadow( 0px 0px 13px black);
+    filter:
+    grayscale( 0) 
+    blur( 0px) 
+    sepia( 34%) 
+    brightness( 0.74) 
+    contrast( 1.1) 
+    hue-rotate( 0deg) 
+    invert( 0%) 
+    saturate( 1.5) 
+    opacity( 1) 
+	drop-shadow( 0px 0px 13px black);
+    transition: .5s ease;
+}
+
+/*Topics*/
+.topics{
+    /*border: 1px solid #000;*/
+    margin-top: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topics-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.topics h2{
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    color: #060A24;
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height);
+    margin-bottom: 3.7rem;
+    margin-left: 1.6rem;
+    
+}
+.topics h3{
+    font-family:var(--font-plex-sans);
+    font-size: 24px;
+    color: #060A24;
+    letter-spacing: var(--letter-spacing);
+    text-align: center;
+    margin-top: 1.3rem;
+    margin-bottom: 6.5rem;
+    display: inline-block;
+    width: 30.0rem;
+}
+
+/*Novelties*/
+
+.novelties{
+    height: 34.1rem;
+    background: linear-gradient(to bottom,#0000FF, #0000A3);
+    clip-path: polygon(0 11%, 100% 0, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.novelties h2{
+    color: #fff;
+    display: inline-block;
+    width:28.8rem;
+    margin-top: 6.4rem;
+    font-family: var(--font-plex-sans);
+    font-size: 3.6rem;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    line-height: var(--line-height);
+}
+.novelties button{
+    margin-top: 3.6rem;
+    width: 28.8rem;
+    height: 4.8rem;
+    background: #00F3BB;
+    cursor: pointer;
+    font-family:var(--font-plex-mono);
+    color: #060A24;
+    text-align: center;
+    font-weight: 800;
+    line-height: var(--line-height);
+    border-style: none;
+    outline: none;
+}
+.novelties button:hover{
+    color:#fff;
+    background: linear-gradient(to right,#00F0B8, #0000FE);
+}
+.novelties button a{
+    text-decoration: none;
+}
+
+/*footer*/
+
+.footer{
+    height: 12.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer h4{
+    display: inline-block;
+    width: 22.7rem;
+    height: 2.2rem;
+    font-family: var(--font-plex-mono);
+    font-size: 1.4rem;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 2.2rem;
+    margin-top: 2.4rem;
+    margin-bottom: 1.6rem;
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.social-media img{
+    width: 1.4rem;
+    height: 2.8rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+.social-media a:first-child{
+    margin-left: 2.7rem;
+}
+.social-media a:last-child{
+    margin-right: 2.7rem;
+}
+.social-media a:hover{
+    text-decoration: none;
+}
+
+/*Querie for Tablet users*/  /*Practice*/
+
+@media only screen and (min-width: 560px) and (max-width:972px) {
+    
+    /*Header*/
+
+    .header{
+        height: 34.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header p{
+        width: 45rem;
+    }
+
+    /*Episodies*/
+
+    .episodies-iframes{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1.1rem;
+    }
+    .episodies div iframe{
+        height: 23.2rem;
+        width: 53.0rem;
+        margin-left: 0.2rem;
+    }
+
+    /*Descriptions and Cellphone picture*/
+
+    .description{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        height: 65.0rem;
+    }
+    .cellphone{
+        height: 42.7rem;
+    }
+
+    /*Guests*/
+
+    .guests{
+        margin-top: 5.4rem;
+        font-size: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .guest-pictures{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .guests img{
+        width: 50%;
+    }
+    
+    /*Topics*/
+
+    .topics-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .topics > h2{
+        position: relative;
+    }
+    .topics-box{
+        width: auto;
+    }
+    #icon2{
+        width: 26.0rem;
+    }
+    #icon4{
+        width: 22.5rem;
+    }
+    /*Footer*/
+
+    .social-media{
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        width:32rem ;
+    }
+}
+
+
+
+
+
+
+
